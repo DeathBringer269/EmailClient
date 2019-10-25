@@ -52,7 +52,7 @@
       <module name="EmailClient" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.client.view.*" />
+          <option name="PATTERN" value="com.client.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
