@@ -1,7 +1,6 @@
 package com.client;
 
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -21,7 +20,7 @@ public class Launcher extends Application {
     public void start(Stage primaryStage) {
         stage = primaryStage;
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("LoginWindow.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("view/LoginWindow.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
