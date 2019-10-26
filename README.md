@@ -1,6 +1,5 @@
 # Email Client using java
-
-
+:exclamation: Still in development :exclamation:
 
 ## Getting Started
 
