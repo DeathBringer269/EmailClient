@@ -14,9 +14,9 @@
             <Font name="System Bold" size="32.0" />
          </font>
       </Label>
-      <TextField fx:id="usernameField" focusTraversable="false" layoutX="135.0" layoutY="188.0" promptText="Username" />
-      <PasswordField fx:id="passwordField" focusTraversable="false" layoutX="135.0" layoutY="226.0" promptText="Password" />
-      <Label fx:id="errorField" layoutX="110.0" layoutY="163.0" prefWidth="200.0" textFill="RED" />
-      <Button layoutX="184.0" layoutY="267.0" mnemonicParsing="false" onAction="#onLoginButtonClicked" text="Login" />
+      <TextField fx:id="usernameField" focusTraversable="false" layoutX="100.0" layoutY="188.0" prefWidth="200.0" promptText="Username" />
+      <PasswordField fx:id="passwordField" focusTraversable="false" layoutX="100.0" layoutY="228.0" prefWidth="200.0" promptText="Password" />
+      <Label fx:id="errorField" layoutX="100.0" layoutY="163.0" prefHeight="17.0" prefWidth="200.0" textFill="RED" />
+      <Button layoutX="177.0" layoutY="268.0" mnemonicParsing="false" onAction="#onLoginButtonClicked" text="Login" />
    </children>
 </AnchorPane>
