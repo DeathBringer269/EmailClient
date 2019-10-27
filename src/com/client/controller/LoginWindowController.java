@@ -27,17 +27,17 @@ public class LoginWindowController extends BaseController {
     }
 
     @FXML
-    void onLoginButtonClicked(ActionEvent event) {
-        if(fieldsAreValid()) {
-            EmailAccount emailAccount = new EmailAccount(usernameField.getText(),passwordField.getText());
-            LoginService loginService = new LoginService(emailAccount,emailManager);
-            EmailLoginResult emailLoginResult = loginService.login();
-            switch(emailLoginResult) {
-                case SUCCESS:
-                    System.out.print("Logged in using " + usernameField.getText());
-                    return;
+    void onLoginButtonClicked( ) {
+        if(fieldsAreValid()){
+            EmailAccount emailAccount = new EmailAccount(usernameField.getText(), passwordField.getText());
+            LoginService loginService = new LoginService(emailAccount, emailManager);
+                EmailLoginResult emailLoginResult= loginService.login();
+                switch (emailLoginResult) {
+                    case SUCCESS:
+                        System.out.println("login succesfull!!!" + emailAccount);
+                        return;
+                }
             }
-        }
     }
 
     private boolean fieldsAreValid() {

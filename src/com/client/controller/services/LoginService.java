@@ -19,22 +19,22 @@ public class LoginService {
         Authenticator authenticator = new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return  new PasswordAuthentication(emailAccount.getAddress(),emailAccount.getPassword());
+                return new PasswordAuthentication(emailAccount.getAddress(), emailAccount.getPassword());
             }
         };
 
         try {
-            Session session = Session.getInstance(emailAccount.getProperties(),authenticator);
-            Store store = session.getStore("imap");
+            Session session = Session.getInstance(emailAccount.getProperties(), authenticator);
+            Store store = session.getStore("imaps");
             store.connect(emailAccount.getProperties().getProperty("incomingHost"),
                     emailAccount.getAddress(),
                     emailAccount.getPassword());
-                    emailAccount.setStore(store);
-                    emailManager.addEmailAccount(emailAccount);
+            emailAccount.setStore(store);
+            emailManager.addEmailAccount(emailAccount);
         } catch (NoSuchProviderException e) {
             e.printStackTrace();
             return EmailLoginResult.FAILED_BY_NETWORK;
-        } catch (AuthenticationFailedException e){
+        } catch (AuthenticationFailedException e) {
             e.printStackTrace();
             return EmailLoginResult.FAILED_BY_CREDENTIALS;
         } catch (MessagingException e) {
