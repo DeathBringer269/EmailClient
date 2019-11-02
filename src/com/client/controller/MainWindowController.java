@@ -2,16 +2,19 @@ package com.client.controller;
 
 import com.client.EmailManager;
 import com.client.view.ViewFactory;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TreeView;
 import javafx.scene.web.WebView;
 
-public class MainWindowController extends BaseController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MainWindowController extends BaseController implements Initializable {
 
     @FXML
-    private TreeView<?> emailTreeView;
+    private TreeView<String> emailTreeView;
 
     @FXML
     private TableView<?> emailTableView;
@@ -33,4 +36,13 @@ public class MainWindowController extends BaseController {
         viewFactory.showLoginWindow();
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        setUpEmailTreeView();
+    }
+
+    private void setUpEmailTreeView() {
+        emailTreeView.setRoot(emailManager.getFolderRoot());
+        emailTreeView.setShowRoot(false);
+    }
 }
