@@ -9,5 +9,5 @@ module EmailClient {
     opens com.client;
     opens com.client.view;
     opens com.client.controller;
-
+    opens com.client.model;
 }
